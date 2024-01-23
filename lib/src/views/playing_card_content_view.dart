@@ -31,8 +31,10 @@ class PlayingCardContentView extends StatelessWidget {
             : constraints.maxWidth / playingCardAspectRatio;
         // these magic numbers are based on measurements
         // taken from a few decks of standard decks of cards.
-        double innerWidth = width * 1.6875 / 2.5;
-        double innerHeight = height * 2.8125 / 3.5;
+        // double innerWidth = width * 1.6875 / 2.5;
+        // double innerHeight = height * 2.8125 / 3.5;
+        double innerWidth = width * 1.6875 / 3.0;
+        double innerHeight = height * 2.8125 / 4.0;
         double sideSpace = (width - innerWidth) / 2.0;
         double suitHeight = height * 0.160714;
         double labelSuitHeight = suitHeight / 2.0;

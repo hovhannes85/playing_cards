@@ -13,20 +13,27 @@ class FlatCardFan extends StatelessWidget {
   const FlatCardFan({Key? key, required this.children}) : super(key: key);
 
   @override
-  Widget build(Object context) {
-    return Stack(
-      children: List.generate(
-        children.length,
-        (index) => Align(
-          alignment: Alignment(
-            children.length > 1
-                ? -1.0 + (index / (children.length - 1)) * 2.0
-                : 0,
-            0,
+  Widget build(BuildContext context) {
+    if (children.length <= 3) {
+      // Center and space evenly when there are 2 or fewer items
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: children,
+      );
+    } else {
+      // Overlap the items when there are more than 2
+      return Stack(
+        children: List.generate(
+          children.length,
+              (index) => Align(
+            alignment: Alignment(
+              -1.0 + (index / (children.length - 1)) * 2.0,
+              0,
+            ),
+            child: children[index],
           ),
-          child: children[index],
         ),
-      ),
-    );
+      );
+    }
   }
 }

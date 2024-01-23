@@ -31,6 +31,8 @@ class PlayingCardView extends StatelessWidget {
   /// These fields are passed to the underlying material card.
   final double? elevation;
 
+  final bool? isDisabled;
+
   /// Card is required. Style can be provided to override as little or as much
   /// of the cards look as you so choose.
   const PlayingCardView({
@@ -40,6 +42,7 @@ class PlayingCardView extends StatelessWidget {
     this.showBack = false,
     this.shape,
     this.elevation,
+    this.isDisabled,
   }) : super(key: key);
 
   @override
@@ -68,6 +71,7 @@ class PlayingCardView extends StatelessWidget {
         color: reconciled.cardBackgroundColor,
         clipBehavior: Clip.antiAlias,
         child: cardBody,
+        isDisabled: isDisabled,
       ),
     );
   }

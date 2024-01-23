@@ -154,7 +154,7 @@ PlayingCardViewStyle defaultPlayingCardStyles = PlayingCardViewStyle(
     suitStyles: {
       Suit.clubs: SuitStyle(
         builder: defaultSuitBuilders[Suit.clubs],
-        style: const TextStyle(fontSize: 12, color: Colors.black),
+        style: const TextStyle(fontSize: 22, color: Colors.black),
         cardContentBuilders: getContentBuilders(
           Suit.clubs,
           defaultSuitBuilders[Suit.clubs],
@@ -163,7 +163,7 @@ PlayingCardViewStyle defaultPlayingCardStyles = PlayingCardViewStyle(
       ),
       Suit.hearts: SuitStyle(
         builder: defaultSuitBuilders[Suit.hearts],
-        style: const TextStyle(fontSize: 12, color: Colors.red),
+        style: const TextStyle(fontSize: 22, color: Colors.red),
         cardContentBuilders: getContentBuilders(
           Suit.hearts,
           defaultSuitBuilders[Suit.hearts],
@@ -172,7 +172,7 @@ PlayingCardViewStyle defaultPlayingCardStyles = PlayingCardViewStyle(
       ),
       Suit.diamonds: SuitStyle(
         builder: defaultSuitBuilders[Suit.diamonds],
-        style: const TextStyle(fontSize: 12, color: Colors.red),
+        style: const TextStyle(fontSize: 22, color: Colors.red),
         cardContentBuilders: getContentBuilders(
           Suit.diamonds,
           defaultSuitBuilders[Suit.diamonds],
@@ -181,7 +181,7 @@ PlayingCardViewStyle defaultPlayingCardStyles = PlayingCardViewStyle(
       ),
       Suit.spades: SuitStyle(
         builder: defaultSuitBuilders[Suit.spades],
-        style: const TextStyle(fontSize: 12, color: Colors.black),
+        style: const TextStyle(fontSize: 22, color: Colors.black),
         cardContentBuilders: getContentBuilders(
           Suit.spades,
           defaultSuitBuilders[Suit.spades],
@@ -190,7 +190,7 @@ PlayingCardViewStyle defaultPlayingCardStyles = PlayingCardViewStyle(
       ),
       Suit.joker: SuitStyle(
         builder: defaultSuitBuilders[Suit.joker],
-        style: const TextStyle(fontSize: 12, color: Colors.black),
+        style: const TextStyle(fontSize: 22, color: Colors.black),
         cardContentBuilders: getContentBuilders(
           Suit.joker,
           defaultSuitBuilders[Suit.joker],

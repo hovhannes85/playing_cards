@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 /// Returns the largest fontSize where the given `text` takes no more than
 /// `fitWidth` width when using the given TextStyle (except for its fontSize).
 double getGoodFontSize(String text, TextStyle style, double fitWidth) {
-  double bestFontSizeSoFar = style.fontSize ?? 12;
+  double bestFontSizeSoFar = style.fontSize ?? 22;
 
   // Returns the text's width using the bestFontSizeSoFar.
   double bestTextWidthSoFar() {
