@@ -64,15 +64,22 @@ class PlayingCardView extends StatelessWidget {
 
     return AspectRatio(
       aspectRatio: playingCardAspectRatio,
-      child: Card(
-        shape: shape,
-        elevation: elevation,
-        surfaceTintColor: reconciled.surfaceTintColor,
-        color: reconciled.cardBackgroundColor,
-        clipBehavior: Clip.antiAlias,
-        child: cardBody,
-        isDisabled: isDisabled,
-      ),
+      child:
+        Container(
+          foregroundDecoration: isDisabled ?? false ? BoxDecoration(
+              color: Colors.grey,
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              backgroundBlendMode:
+              BlendMode.multiply) : null,
+          child: Card(
+            shape: shape,
+            elevation: elevation,
+            surfaceTintColor: reconciled.surfaceTintColor,
+            color: reconciled.cardBackgroundColor,
+            clipBehavior: Clip.antiAlias,
+            child: cardBody,
+          ),
+        )
     );
   }
 }
