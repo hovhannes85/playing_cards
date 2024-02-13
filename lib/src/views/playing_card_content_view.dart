@@ -33,16 +33,17 @@ class PlayingCardContentView extends StatelessWidget {
         // taken from a few decks of standard decks of cards.
         // double innerWidth = width * 1.6875 / 2.5;
         // double innerHeight = height * 2.8125 / 3.5;
-        double innerWidth = width * 1.6875 / 3.0;
-        double innerHeight = height * 2.8125 / 4.0;
-        double sideSpace = (width - innerWidth) / 2.0;
+        double innerWidth = width * 1.6875 / 4.0;
+        double innerHeight = height * 2.8125 / 5.0;
+        double sideSpace = width / 3.0;
         double suitHeight = height * 0.160714;
-        double labelSuitHeight = suitHeight / 2.0;
+        // double labelSuitHeight = suitHeight / 2.0;
+        double labelSuitHeight = height / 6;
         double sideOffset = 0;
         double topOffset = height * 0.030714;
 
         TextStyle ts = valueTextStyle!.copyWith(
-          fontSize: getGoodFontSize("I0", valueTextStyle!, sideSpace * .9),
+          fontSize: 23,//getGoodFontSize("I0", valueTextStyle!, sideSpace * .9),
         );
 
         Widget label = Text(
@@ -73,12 +74,13 @@ class PlayingCardContentView extends StatelessWidget {
 
         return Stack(
           children: [
-            Align(
-              alignment: const Alignment(0, 0),
+          Positioned(
+            right: width * 0.075,
+            bottom: topOffset,
               child: SizedBox(
                 width: innerWidth,
                 height: innerHeight,
-                child: center != null ? center!(context) : Container(),
+                child: suit,
               ),
             ),
             // Top label and suit
@@ -86,15 +88,6 @@ class PlayingCardContentView extends StatelessWidget {
               left: sideOffset,
               top: topOffset,
               child: cornerContainer,
-            ),
-            // Bottom label and suit
-            Positioned(
-              right: sideOffset,
-              bottom: topOffset,
-              child: RotatedBox(
-                quarterTurns: 2,
-                child: cornerContainer,
-              ),
             ),
           ],
         );
