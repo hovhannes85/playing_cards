@@ -35,7 +35,7 @@ class PlayingCardContentView extends StatelessWidget {
         // double innerHeight = height * 2.8125 / 3.5;
         double innerWidth = width * 1.6875 / 4.0;
         double innerHeight = height * 2.8125 / 5.0;
-        double sideSpace = width / 3.0;
+        double sideSpace = width / 2.0;
         double suitHeight = height * 0.160714;
         // double labelSuitHeight = suitHeight / 2.0;
         double labelSuitHeight = height / 6;
@@ -74,9 +74,9 @@ class PlayingCardContentView extends StatelessWidget {
 
         return Stack(
           children: [
-          Positioned(
-            right: width * 0.075,
-            bottom: topOffset,
+            Positioned(
+              right: width * 0.075,
+              bottom: topOffset,
               child: SizedBox(
                 width: innerWidth,
                 height: innerHeight,
