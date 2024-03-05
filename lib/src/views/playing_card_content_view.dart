@@ -43,7 +43,7 @@ class PlayingCardContentView extends StatelessWidget {
         double topOffset = height * 0.030714;
 
         TextStyle ts = valueTextStyle!.copyWith(
-          fontSize: 23,//getGoodFontSize("I0", valueTextStyle!, sideSpace * .9),
+          fontSize: getGoodFontSize("I0", valueTextStyle!, sideSpace * .9),
         );
 
         Widget label = Text(
