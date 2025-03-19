@@ -64,14 +64,9 @@ class PlayingCardView extends StatelessWidget {
 
     return AspectRatio(
       aspectRatio: playingCardAspectRatio,
-      child:
-        Container(
-          foregroundDecoration: isDisabled ?? false ? BoxDecoration(
-              color: Colors.grey,
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              backgroundBlendMode:
-              BlendMode.multiply) : null,
-          child: Card(
+      child: Stack(
+        children: [
+          Card(
             shape: shape,
             elevation: elevation,
             surfaceTintColor: reconciled.surfaceTintColor,
@@ -79,7 +74,22 @@ class PlayingCardView extends StatelessWidget {
             clipBehavior: Clip.antiAlias,
             child: cardBody,
           ),
-        )
+          if (isDisabled ?? false)
+            Positioned.fill(
+              child: Padding(
+                padding: EdgeInsets.all(4),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.8), // Semi-transparent gray overlay
+                    borderRadius: shape is RoundedRectangleBorder
+                        ? (shape as RoundedRectangleBorder).borderRadius
+                        : BorderRadius.circular(4), // Match card shape
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
